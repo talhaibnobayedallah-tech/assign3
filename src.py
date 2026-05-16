@@ -4,7 +4,7 @@ from matplotlib import image, pyplot as plt
 from PIL import Image
 from scipy import signal
 import cv2 as cv
-import math
+
 def gnoise(np_array, mean, sigma):
     # Ensure math happens in float to avoid overflow
     noise = np.random.normal(mean, sigma, np_array.shape)
@@ -96,8 +96,4 @@ if __name__ == "__main__":
     plt.imshow(image2, cmap='gray')
     plt.title("Laplacian"); plt.axis('off')
 
-    plt.figure(figsize=(15,8))
-    adad_image = cv.imread("1.jpg", 0)
-    adad_log = np.log2(adad_image+1)*20
-    plt.imread(adad_log, cmap='gray')
     plt.show()
